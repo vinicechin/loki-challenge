@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0310E6F89BD90B71C83F45CD /* Pods_lokichallange.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE6BD87C5A54F1C532546CF4 /* Pods_lokichallange.framework */; };
 		B1635C092357380F006AC49D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1635C082357380F006AC49D /* AppDelegate.swift */; };
-		B1635C0B2357380F006AC49D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1635C0A2357380F006AC49D /* ViewController.swift */; };
+		B1635C0B2357380F006AC49D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1635C0A2357380F006AC49D /* MapViewController.swift */; };
 		B1635C0E2357380F006AC49D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1635C0C2357380F006AC49D /* Main.storyboard */; };
 		B1635C102357380F006AC49D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1635C0F2357380F006AC49D /* Assets.xcassets */; };
 		B1635C132357380F006AC49D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1635C112357380F006AC49D /* LaunchScreen.storyboard */; };
@@ -20,7 +20,7 @@
 		AE6BD87C5A54F1C532546CF4 /* Pods_lokichallange.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lokichallange.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1635C052357380F006AC49D /* lokichallange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lokichallange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1635C082357380F006AC49D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B1635C0A2357380F006AC49D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B1635C0A2357380F006AC49D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B1635C0D2357380F006AC49D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B1635C0F2357380F006AC49D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1635C122357380F006AC49D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -46,7 +46,6 @@
 				E106758FA3BCCBC8E02F1DE4 /* Pods-lokichallange.debug.xcconfig */,
 				8A779C924E13DC030846EEA1 /* Pods-lokichallange.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -80,7 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				B1635C082357380F006AC49D /* AppDelegate.swift */,
-				B1635C0A2357380F006AC49D /* ViewController.swift */,
+				B1635C0A2357380F006AC49D /* MapViewController.swift */,
 				B1635C0C2357380F006AC49D /* Main.storyboard */,
 				B1635C0F2357380F006AC49D /* Assets.xcassets */,
 				B1635C112357380F006AC49D /* LaunchScreen.storyboard */,
@@ -186,7 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1635C0B2357380F006AC49D /* ViewController.swift in Sources */,
+				B1635C0B2357380F006AC49D /* MapViewController.swift in Sources */,
 				B1635C092357380F006AC49D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
