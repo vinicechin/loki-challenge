@@ -14,6 +14,7 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     
     let locationManager = CLLocationManager()
+    let annotation = MKPointAnnotation()
     var coord : CLLocationCoordinate2D?
     
     override func viewDidLoad() {
@@ -25,10 +26,18 @@ class MapViewController: UIViewController {
         locationManager.startUpdatingLocation()
         
         let doubleTapGesture = UITapGestureRecognizer(target: self, action: #selector(didSelectLocation))
-        
         doubleTapGesture.numberOfTapsRequired = 2
         doubleTapGesture.delegate = self
         view.addGestureRecognizer(doubleTapGesture)
+        
+        let singleTapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapLocation))
+        singleTapGesture.delegate = self
+        view.addGestureRecognizer(singleTapGesture)
+    }
+    
+    @objc func didTapLocation(_ sender: UITapGestureRecognizer) {
+        let coord = mapView.convert(sender.location(in: mapView), toCoordinateFrom: mapView)
+        centerMapOnLocation(coord)
     }
     
     @objc func didSelectLocation(_ sender: UITapGestureRecognizer) {
@@ -50,6 +59,8 @@ class MapViewController: UIViewController {
         let coordRegion = MKCoordinateRegion(center: location, latitudinalMeters: radius, longitudinalMeters: radius)
         
         mapView.setRegion(coordRegion, animated: true)
+        annotation.coordinate = location
+        mapView.addAnnotation(annotation)
     }
 
 
