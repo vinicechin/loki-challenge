@@ -6,5 +6,7 @@ target 'lokichallange' do
   use_frameworks!
 
   # Pods for lokichallange
+  pod 'SwiftyJSON'
+  pod 'Alamofire'
 
 end
