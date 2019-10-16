@@ -34,7 +34,6 @@
                     <navigationItem key="navigationItem" id="KmM-zJ-s2Z"/>
                     <connections>
                         <outlet property="mapView" destination="PsY-KM-vmb" id="Wht-YF-1Fd"/>
-                        <segue destination="TdG-zy-bsI" kind="show" identifier="goToWeather" id="6jQ-a9-BKg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oGs-RP-tPg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -44,19 +43,19 @@
         <!--Weather View Controller-->
         <scene sceneID="I5b-Dj-8b1">
             <objects>
-                <viewController id="TdG-zy-bsI" customClass="WeatherViewController" customModule="lokichallange" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="weatherVC" id="TdG-zy-bsI" customClass="WeatherViewController" customModule="lokichallange" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ozG-Gv-KFb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enI-ty-OG3">
-                                <rect key="frame" x="15" y="166" width="384" height="21"/>
+                                <rect key="frame" x="15" y="122" width="384" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cP3-TO-2Mc">
-                                <rect key="frame" x="15" y="529" width="384" height="21"/>
+                                <rect key="frame" x="15" y="485" width="384" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
