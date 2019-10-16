@@ -7,4 +7,4 @@ A challenge to implement a weather application
 * SwiftyJSON - to handle json transformations
 
 ## API
-[OpenWeatherMap](http://api.openweathermap.org/data/2.5/weather)
+[OpenWeatherMap](https://openweathermap.org)
