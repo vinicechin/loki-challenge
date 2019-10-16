@@ -17,6 +17,7 @@ struct WeatherAPIConstants {
 class WeatherViewModel: NSObject {
     
     var delegate: WeatherViewModelDelegate?
+    private let weatherDataKey = "weatherData"
     
     func setCoordinate(_ coordinate: Coordinate) {
         let params : [String : String] = ["lat" : coordinate.latitude, "lon" : coordinate.longitude, "appid" : WeatherAPIConstants.APP_ID]
@@ -25,11 +26,12 @@ class WeatherViewModel: NSObject {
     }
     
     
-    func getWeatherData(url: String, parameters: [String : String]) {
+    private func getWeatherData(url: String, parameters: [String : String]) {
         Alamofire.request(url, method: .get, parameters: parameters).responseJSON {
             response in
             
             guard response.result.isSuccess else {
+                self.getFromCache()
                 print("Error \(String(describing: response.result.error))")
                 return
             }
@@ -41,13 +43,30 @@ class WeatherViewModel: NSObject {
         }
     }
     
-    func updateWeatherData(json: JSON) {
+    private func updateWeatherData(json: JSON) {
         
         if let weatherData = try? JSONDecoder().decode(WeatherData.self, from: json.rawData()),
             let firstWeather = weatherData.weather.first {
             delegate?.setCityNameText(weatherData.name)
             delegate?.setDescriptionText(firstWeather.description)
             delegate?.setTemperatureText("\(weatherData.main.temp)")
+            
+            saveToCache(weatherData)
+        }
+    }
+    
+    private func saveToCache(_ data: WeatherData) {
+        let defaults = UserDefaults.standard
+        if let encodedData = try? JSONEncoder().encode(data) {
+            defaults.set(encodedData, forKey: weatherDataKey)
+        }
+    }
+    
+    private func getFromCache() {
+        let defaults = UserDefaults.standard
+        if let weatherData = defaults.data(forKey: weatherDataKey) {
+            let weatherJSON : JSON = JSON(weatherData)
+            self.updateWeatherData(json: weatherJSON)
         }
     }
 }
