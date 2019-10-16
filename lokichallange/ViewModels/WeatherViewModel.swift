@@ -49,7 +49,7 @@ class WeatherViewModel: NSObject {
             let firstWeather = weatherData.weather.first {
             delegate?.setCityNameText(weatherData.name)
             delegate?.setDescriptionText(firstWeather.description)
-            delegate?.setTemperatureText("\(weatherData.main.temp)")
+            delegate?.setTemperatureText("Temperature(F)\n\(weatherData.main.temp)°")
             
             saveToCache(weatherData)
         }
