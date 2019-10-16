@@ -12,6 +12,10 @@ import Alamofire
 import SwiftyJSON
 
 class WeatherViewController: UIViewController {
+    @IBOutlet weak var temperature: UILabel!
+    @IBOutlet weak var location: UILabel!
+    @IBOutlet weak var weather: UILabel!
+    
     let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather"
     let APP_ID = "fd3f519c2c560f50d39d6faf3e68ba9b"
     var coord : CLLocationCoordinate2D?
@@ -40,5 +44,9 @@ class WeatherViewController: UIViewController {
     
     func updateWeatherData(json: JSON) {
         print(json)
+        
+        temperature.text = String(json["main"]["temp"].doubleValue - 273.15)
+        location.text = json["name"].stringValue
+        weather.text = json["weather"][0]["description"].stringValue
     }
 }
